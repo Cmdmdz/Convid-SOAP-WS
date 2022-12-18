@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://services/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services/">
+
+<xs:element name="dataAPI" type="tns:dataAPI"/>
+
+<xs:element name="dataAPIResponse" type="tns:dataAPIResponse"/>
+
+<xs:element name="getData" type="tns:getData"/>
+
+<xs:element name="getDataResponse" type="tns:getDataResponse"/>
+
+<xs:element name="timeline" type="tns:timeline"/>
+
+<xs:element name="timelineResponse" type="tns:timelineResponse"/>
+
+<xs:complexType name="dataAPI">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="dataAPIResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getData">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:timelineCaseByProvinces" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timelineCaseByProvinces">
+<xs:sequence>
+<xs:element name="new_case" type="xs:int" minOccurs="0"/>
+<xs:element name="new_case_excludeabroad" type="xs:int" minOccurs="0"/>
+<xs:element name="new_death" type="xs:int" minOccurs="0"/>
+<xs:element name="total_case" type="xs:int" minOccurs="0"/>
+<xs:element name="total_case_excludeabroad" type="xs:int" minOccurs="0"/>
+<xs:element name="total_death" type="xs:int" minOccurs="0"/>
+<xs:element name="weeknum" type="xs:int" minOccurs="0"/>
+<xs:element name="year" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="timeline">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="timelineResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:timelineCaseByProvinces" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
